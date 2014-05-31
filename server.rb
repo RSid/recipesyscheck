@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'pry'
 require 'shotgun'
+require 'pg'
 
 def db_connection
   begin
@@ -11,9 +12,9 @@ def db_connection
   end
 end
 
-def find_articles
+def find_recipes
   db_connection do |conn|
-    conn.exec('SELECT * FROM sys_recipes').values
+    conn.exec('SELECT * FROM recipes').values
   end
 end
 
@@ -22,11 +23,12 @@ end
 ###################
 
 get '/recipes' do
+  @recipes=find_recipes
 
-  erb: index
+   erb :index
 end
 
 get '/recipes/:id' do
 
-  erb: recipe
+  erb :recipe
 end

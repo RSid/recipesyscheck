@@ -9,9 +9,18 @@
   <% @recipes.each do |recipe| %>
     <% if @id==recipe[0] %>
       <h1><%=recipe[1]%></h1>
+      <h3>Ingredients</h3>
+      <ol>
+        <% @recipe_ingredients.each do |recipe_ingredient| %>
+          <li><%= recipe_ingredient[1] %></li>
+        <% end %>
+      </ol>
+
+      <h3>Directions</h3>
       <ul>
+        <p>Instructions</p>
         <li><%=recipe[2]%></li>
-        <br>
+        <p>Description</p>
         <li><%=recipe[3]%></li>
       </ul>
     <% end %>

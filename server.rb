@@ -18,6 +18,12 @@ def find_recipes
   end
 end
 
+def find_recipe_ingredients (id)
+  db_connection do |conn|
+    conn.exec_params('SELECT * FROM ingredients JOIN recipes ON ingredients.recipe_id=recipes.id WHERE ingredients.recipe_id=$1',[id]).values
+  end
+end
+
 ###################
 #CONTROLLER
 ###################
@@ -32,6 +38,7 @@ get '/recipes/:id' do
   @id=params[:id]
 
   @recipes=find_recipes
+  @recipe_ingredients=find_recipe_ingredients(@id)
 
   erb :recipe
 end

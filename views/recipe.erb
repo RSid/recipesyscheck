@@ -7,32 +7,30 @@
 </head>
 <body>
 
-  <% @recipes.each do |recipe| %>
-    <% if @id==recipe[0] %>
-      <h1><%=recipe[1]%></h1>
-      <h3>Ingredients</h3>
-      <ol>
-        <% @recipe_ingredients.each do |recipe_ingredient| %>
-          <li><%= recipe_ingredient[1] %></li>
-        <% end %>
-      </ol>
+<a href="/recipes"><p>Home</p></a>
 
-      <h3>Directions</h3>
-      <ul>
-        <p>Instructions</p>
-          <ol>
-            <% @instructions.each do |step| %>
-              <li><%=step%></li>
-            <% end %>
-          </ol>
-        <p>Description</p>
-        <li><%=recipe[3]%></li>
-      </ul>
+<div class="content-list">
+    <% @recipes.each do |recipe| %>
+      <% if @id==recipe[0] %>
+        <h1><%=recipe[1]%></h1>
+        <p>Ingredients</p>
+        <ol>
+          <% @recipe_ingredients.each do |recipe_ingredient| %>
+            <li><%= recipe_ingredient[1] %></li>
+          <% end %>
+        </ol>
+
+          <p>Instructions</p>
+          <p><%=recipe[2]%></p>
+          <p>Description</p>
+          <p><%=recipe[3]%></p>
+
+      <% end %>
     <% end %>
-  <% end %>
 
+  <a href="/recipes"><p>Home</p></a>
 
-
+</div>
 
 </body>
 </html>

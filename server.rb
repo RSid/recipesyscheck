@@ -30,10 +30,7 @@ def recipe_instructions (id)
   end
 end
 
-def stepify_recipe_instructions (id)
-  instructions=recipe_instructions(id)
-  instructions.flatten[0].split(/[0-9]\s/)
-end
+
 
 ###################
 #CONTROLLER
@@ -50,7 +47,7 @@ get '/recipes/:id' do
 
   @recipes=find_recipes
   @recipe_ingredients=find_recipe_ingredients(@id)
-  @instructions=stepify_recipe_instructions(@id)
+
 
   erb :recipe
 end

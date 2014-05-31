@@ -7,14 +7,17 @@
 </head>
 <body>
 
-<h1>Recipes</h1>
+<div class="content-list">
 
-<ul>
-  <% @recipes.each do |recipe| %>
-    <li><a href= <%= "/recipes/#{recipe[0]}" %> ><%= recipe[1] %></a></li>
-  <% end %>
-</ul>
+  <h1>Recipes</h1>
 
+  <ul class="recipe-list">
+    <% @recipes.each do |recipe| %>
+      <li><a href= <%= "/recipes/#{recipe[0]}" %> ><%= recipe[1] %></a></li>
+    <% end %>
+  </ul>
+
+</div>
 
 
 </body>

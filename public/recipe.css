@@ -1,7 +1,52 @@
 body {
   font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+  background: floralwhite;
 }
 
-h1{
+h1 {
+  text-align: center;
+  border-bottom: 8px dashed gray;
+  border-top: 8px dashed gray;
+  padding: 8px;
+}
 
+.instructions {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+
+}
+
+.instructions li {
+  padding: 10px 0px;
+}
+
+
+.content-list {
+  padding: 5px;
+
+}
+
+a p {
+  text-align: center;
+  margin: 0px;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+.recipe-list {
+  list-style: square;
+  padding-top: 10px;
+}
+
+.recipe-list li {
+  color: gray;
+}
+
+.recipe-list li a {
+  text-decoration: none;
+  color: black;
 }

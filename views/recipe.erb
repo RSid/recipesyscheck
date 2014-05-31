@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recipe</title>
+</head>
+<body>
+
+  <% @recipes.each do |recipe| %>
+    <% if @id==recipe[0] %>
+      <h1><%=recipe[1]%></h1>
+      <ul>
+        <li><%=recipe[2]%></li>
+        <br>
+        <li><%=recipe[3]%></li>
+      </ul>
+    <% end %>
+  <% end %>
+
+
+
+
+</body>
+</html>

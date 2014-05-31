@@ -14,7 +14,7 @@ end
 
 def find_recipes
   db_connection do |conn|
-    conn.exec('SELECT * FROM recipes').values
+    conn.exec('SELECT * FROM recipes ORDER BY name').values
   end
 end
 
@@ -29,6 +29,9 @@ get '/recipes' do
 end
 
 get '/recipes/:id' do
+  @id=params[:id]
+
+  @recipes=find_recipes
 
   erb :recipe
 end

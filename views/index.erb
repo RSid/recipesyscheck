@@ -10,7 +10,7 @@
 
 <ul>
   <% @recipes.each do |recipe| %>
-    <li><%= recipe[1] %></li>
+    <li><a href= <%= "/recipes/#{recipe[0]}" %> ><%= recipe[1] %></a></li>
   <% end %>
 </ul>
 
